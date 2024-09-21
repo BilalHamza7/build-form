@@ -19,6 +19,10 @@ export default function Dashboard() {
     const [isEndCardOpen, setIsEndCardOpen] = useState(false);
     const [isEmailCardOpen, setIsEmailCardOpen] = useState(false);
 
+    const [welcomeTitle, setWelcomeTitle] = useState('Welcome to our form');
+    const [description, setDescription] = useState('This is a description of the form');
+    const [buttonText, setButtonText] = useState('start');
+
     function handleAddField() {  //to add a new email field
         setTitleCards([...titleCards, { id: titleCards.length, title }]);
     }
@@ -70,7 +74,7 @@ export default function Dashboard() {
     return (
         <>
             <div className="flex">
-                <div className="flex-col w-fit h-[563px] overflow-y-auto m-5">
+                <div className="flex flex-col w-fit h-screen overflow-y-auto m-5">
                     <div className="flex items-center justify-between w-72">
                         <div className="flex items-center">
                             <Image src={cube} alt="cube" className="w-3" />
@@ -129,8 +133,10 @@ export default function Dashboard() {
                         </button>
                     </div>
                 </div>
+                <div className="flex-grow">
+                    <WelcomeScreenOutput title={welcomeTitle} description={description} buttonText={buttonText} onTitleChange={setWelcomeTitle} />
+                </div>
             </div>
-            {/* <WelcomeScreenOutput /> */}
         </>
     )
 };

@@ -14,7 +14,7 @@ export default function TitleCard(props) {
                     <Image src={icon} alt="icon" className="w-3 h-3 opacity-60 " />
                 </div>
 
-                <div className='w-full hover:cursor-pointer' onClick={props.onCardClick} >
+                <div className='w-full h-full hover:cursor-pointer' onClick={props.onCardClick} >
                     <p className='text-black text-sm ml-16 font-sans'>{props.title}</p>
                 </div>
 
